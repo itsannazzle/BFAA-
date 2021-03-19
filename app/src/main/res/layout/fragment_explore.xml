@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:padding="16dp"
+    tools:context=".Explore">
+
+
+    <EditText
+        android:id="@+id/sarchbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/text_field"
+        android:hint="@string/search_ot_jump_to"
+        style="@style/sub_title"
+        android:textColorHint="@color/icon_grey"
+        android:textColor="@color/black"
+        android:drawableEnd="@drawable/ic_slash"
+        android:drawablePadding="4dp"
+        android:autofillHints="@string/search_ot_jump_to"
+        android:inputType="textShortMessage" />
+    <TextView
+        android:id="@+id/texttren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/title"
+        android:text="@string/trending_developers"
+        android:textColor="@color/low_black"
+        app:layout_constraintTop_toBottomOf="@id/sarchbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        app:layout_constraintHorizontal_bias="0"/>
+    <ListView
+        android:id="@+id/trending_dev"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="580dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/texttren"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp"
+        tools:listitem="@layout/list_trending_dev"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
