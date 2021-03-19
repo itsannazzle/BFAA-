@@ -66,7 +66,7 @@ class Explore : Fragment() {
 
     }
 
-    private fun addItem(){
+    private fun addItem() : ArrayList<trending_dev> {
         /*basically, this addItem is used for adding the data for the trending_dev data class*/
         for (pos in dname.indices){
             val devop = trending_dev(
