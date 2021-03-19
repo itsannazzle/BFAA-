@@ -45,7 +45,8 @@ class developer_detail : Fragment() {
         loc = view.findViewById(R.id.dev_location)
         rep = view.findViewById(R.id.Repositories)
         rv_repo = view.findViewById(R.id.rv_repo)
-        user_repo()
+        rv_repo.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        rv_repo.adapter = repo_adapter(gitData)
         gitData.addAll(object_data.user_repo)
     }
 
@@ -64,9 +65,6 @@ class developer_detail : Fragment() {
             rep.text = "Repositories ${a.dev_repo}"
         }
     }
-    private fun user_repo() {
-        rv_repo.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        rv_repo.adapter = repo_adapter(gitData)
-    }
+
 
 }

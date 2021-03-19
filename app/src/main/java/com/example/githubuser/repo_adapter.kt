@@ -16,7 +16,10 @@ class repo_adapter(private val user : ArrayList<repo>) : RecyclerView.Adapter<re
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): repo_adapter.rViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.repo_card,parent,false)
+
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.repo_card,parent,false)
+
+
         return rViewHolder(view)
     }
 

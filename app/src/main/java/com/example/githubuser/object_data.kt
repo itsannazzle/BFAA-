@@ -26,11 +26,12 @@ object object_data {
         /*this arraylistof is turunan from ArrayList its like opening a box inside a box to
         * get the thing inside it*/
         for (i in repo_title.indices){
-            val j = repo()
+            val j = repo(
             /*this J, is the thing that i meant*/
-            j.user_repo = repo_title[i]
-            j.user_repo_des = repo_desc[i]
-            j.user_repo_lang = repo_lang[i]
+            user_repo = repo_title[i],
+            user_repo_des = repo_desc[i],
+            user_repo_lang = repo_lang[i]
+            )
             l.add(j)
             /*this l.add means l now has gotten data from the object data*/
         }
