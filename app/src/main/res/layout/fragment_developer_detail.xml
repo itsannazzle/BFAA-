@@ -1,138 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:padding="16dp"
     tools:context=".developer_detail">
-    
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/pic"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:src="@drawable/aku"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintVertical_bias="0"/>
+        app:layout_constraintVertical_bias="0" />
+
     <TextView
         android:id="@+id/dev_name"
+        style="@style/sub_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/pic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        style="@style/sub_title"
-        android:textColor="@color/low_black"
         android:text="@string/anna_karenina"
-        app:layout_constraintVertical_bias="0.008"
-        app:layout_constraintHorizontal_bias="0.08"/>
+        android:textColor="@color/low_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toEndOf="@id/pic"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.008" />
+
     <TextView
         android:id="@+id/dev_username"
+        style="@style/body_copy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/dev_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        style="@style/body_copy"
-        android:textColor="@color/low_black"
         android:text="@string/anna_karenina"
-        app:layout_constraintVertical_bias="0.008"
-        app:layout_constraintHorizontal_bias="0.08"/>
+        android:textColor="@color/low_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toEndOf="@id/dev_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.008" />
+
     <TextView
         android:id="@+id/dev_followers"
+        style="@style/body_copy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/pic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dev_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        style="@style/body_copy"
-        android:textColor="@color/low_black"
         android:text="@string/followers"
-        app:layout_constraintVertical_bias="0.008"
-        app:layout_constraintHorizontal_bias="0.08"/>
+        android:textColor="@color/low_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toEndOf="@id/pic"
+        app:layout_constraintTop_toBottomOf="@id/dev_name"
+        app:layout_constraintVertical_bias="0.008" />
+
     <TextView
         android:id="@+id/dev_following"
+        style="@style/body_copy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/dev_followers"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dev_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        style="@style/body_copy"
-        android:textColor="@color/low_black"
         android:text="@string/following"
-        app:layout_constraintVertical_bias="0.008"
-        app:layout_constraintHorizontal_bias="0.08"/>
+        android:textColor="@color/low_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toEndOf="@id/dev_followers"
+        app:layout_constraintTop_toBottomOf="@id/dev_name"
+        app:layout_constraintVertical_bias="0.008" />
+
     <TextView
         android:id="@+id/dev_company"
+        style="@style/body_copy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawablePadding="4dp"
-        app:layout_constraintStart_toEndOf="@id/pic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dev_followers"
-        app:layout_constraintBottom_toBottomOf="parent"
-        style="@style/body_copy"
-        android:textColor="@color/low_black"
         android:text="@string/anna_karenina"
-        app:layout_constraintVertical_bias="0.008"
+        android:textColor="@color/low_black"
+        app:drawableStartCompat="@drawable/ic_baseline_apartment_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.08"
-        app:drawableStartCompat="@drawable/ic_baseline_apartment_24" />
+        app:layout_constraintStart_toEndOf="@id/pic"
+        app:layout_constraintTop_toBottomOf="@id/dev_followers"
+        app:layout_constraintVertical_bias="0.008" />
+
     <TextView
         android:id="@+id/dev_location"
+        style="@style/body_copy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawablePadding="4dp"
-        app:layout_constraintStart_toEndOf="@id/pic"
-        app:layout_constraintVertical_bias="0.008"
-        app:layout_constraintHorizontal_bias="0.08"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dev_company"
-        app:layout_constraintBottom_toBottomOf="parent"
-        style="@style/body_copy"
-        android:textColor="@color/low_black"
         android:text="@string/anna_karenina"
-        app:drawableStartCompat="@drawable/ic_baseline_location_on_24" />
+        android:textColor="@color/low_black"
+        app:drawableStartCompat="@drawable/ic_baseline_location_on_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toEndOf="@id/pic"
+        app:layout_constraintTop_toBottomOf="@id/dev_company"
+        app:layout_constraintVertical_bias="0.008" />
+
     <TextView
         android:id="@+id/Repositories"
+        style="@style/sub_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pic"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:text="@string/repositories"
-        style="@style/sub_title"
         android:textColor="@color/low_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintVertical_bias="0.032"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pic"
+        app:layout_constraintVertical_bias="0.032" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_repo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/Repositories"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Repositories"
+        app:layout_constraintVertical_bias="0"
         tools:layout_editor_absoluteX="16dp"
         tools:listitem="@layout/repo_card" />
 
-
-
-
-    
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

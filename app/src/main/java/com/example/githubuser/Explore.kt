@@ -1,36 +1,40 @@
 package com.example.githubuser
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
-import android.widget.ListView
 import androidx.fragment.app.Fragment
+import com.example.githubuser.databinding.FragmentExploreBinding
 
 class Explore : Fragment() {
     /*instaciate?*/
     private lateinit var adap : customAadapter
-
-    //private val dev = arrayListOf<trending_dev>()
+    private lateinit var binding : FragmentExploreBinding
+    private val dev = arrayListOf<trending_dev>()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_explore, container, false)
+        binding = FragmentExploreBinding.inflate(inflater,container,false)
+        return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         /*initialize?*/
-        val tren_dev : ListView = view.findViewById(R.id.trending_dev)
-        val adap = customAadapter()
-        tren_dev.adapter = adap
+
+
+        adap = customAadapter()
+
+        binding.listTrending.adapter = adap
         addItem()
-        tren_dev.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, _ ->
+        binding.listTrending.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
             val bund = Bundle()
             val dd = developer_detail()
-            bund.putParcelable(developer_detail.ex, arrayListOf<trending_dev>()[position])
+            bund.putParcelable(developer_detail.ex,dev[position])
             dd.arguments = bund
             val fragMan = fragmentManager
             /*to replace one fragment into the other one*/
@@ -44,6 +48,7 @@ class Explore : Fragment() {
     }
 
 
+    @SuppressLint("Recycle")
     private fun addItem() : ArrayList<trending_dev> {
         val dname= resources.getStringArray(R.array.name)
         val dusername= resources.getStringArray(R.array.username)

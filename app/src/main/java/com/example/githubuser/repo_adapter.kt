@@ -12,14 +12,10 @@ class repo_adapter(private val user : ArrayList<repo>) : RecyclerView.Adapter<re
         val nama : TextView = itemView.findViewById(R.id.repo1)
         val desc : TextView = itemView.findViewById(R.id.repodesc)
         val lang : TextView = itemView.findViewById(R.id.repo_lang)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): repo_adapter.rViewHolder {
-
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.repo_card,parent,false)
-
-
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.repo_card,parent,false)
         return rViewHolder(view)
     }
 

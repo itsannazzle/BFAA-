@@ -38,7 +38,7 @@
         android:layout_marginTop="24dp"
         app:layout_constraintHorizontal_bias="0"/>
     <ListView
-        android:id="@+id/trending_dev"
+        android:id="@+id/list_trending"
         android:layout_marginTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="580dp"

@@ -6,21 +6,23 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.githubuser.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
-
+    private lateinit var binding : ActivityMainBinding
     private val gitData: ArrayList<repo> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val rv_repo : RecyclerView = findViewById(R.id.rv_overview)
-        rv_repo.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        rv_repo.adapter = repo_adapter(gitData)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         gitData.addAll(object_data.user_repo)
-        val bottomNav : BottomNavigationView = findViewById(R.id.bn)
-        bottomNav.setOnNavigationItemSelectedListener(this)
+        binding.rvOverview.adapter = repo_adapter(gitData)
+        binding.rvOverview.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+
+        binding.bottomNav.setOnNavigationItemSelectedListener(this)
 
     }
 

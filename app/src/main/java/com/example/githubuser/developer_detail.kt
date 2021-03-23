@@ -10,18 +10,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.githubuser.databinding.FragmentDeveloperDetailBinding
 
 
 class developer_detail : Fragment() {
-    private lateinit var d_img : ImageView
-    private lateinit var name : TextView
-    private lateinit var uname : TextView
-    private lateinit var fers : TextView
-    private lateinit var fing : TextView
-    private lateinit var comp : TextView
-    private lateinit var loc : TextView
-    private lateinit var rep : TextView
-    private lateinit var rv_repo : RecyclerView
+    private lateinit var binding: FragmentDeveloperDetailBinding
     private val gitData: ArrayList<repo> = arrayListOf()
    companion object{
        /*i have to remember this, this is key, the value cant be the same,
@@ -31,22 +24,16 @@ class developer_detail : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_developer_detail, container, false)
+        binding = FragmentDeveloperDetailBinding.inflate(inflater,container,false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        d_img = view.findViewById(R.id.pic)
-        name = view.findViewById(R.id.dev_name)
-        uname = view.findViewById(R.id.dev_username)
-        fers = view.findViewById(R.id.dev_followers)
-        fing = view.findViewById(R.id.dev_following)
-        comp = view.findViewById(R.id.dev_company)
-        loc = view.findViewById(R.id.dev_location)
-        rep = view.findViewById(R.id.Repositories)
-        rv_repo = view.findViewById(R.id.rv_repo)
-        rv_repo.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        rv_repo.adapter = repo_adapter(gitData)
+
+
+        binding.rvRepo.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvRepo.adapter = repo_adapter(gitData)
         gitData.addAll(object_data.user_repo)
     }
 
@@ -55,14 +42,14 @@ class developer_detail : Fragment() {
         super.onActivityCreated(savedInstanceState)
         val a = arguments?.getParcelable<trending_dev>(ex) as trending_dev
         if (arguments != null){
-            d_img.setImageResource(a.dev_img)
-            name.text = a.dev_name
-            uname.text = a.dev_username
-            fers.text = "${a.dev_followers} followers"
-            fing.text = "${a.dev_following} following"
-            comp.text = a.dev_comp
-            loc.text = a.dev_country
-            rep.text = "Repositories ${a.dev_repo}"
+            binding.pic.setImageResource(a.dev_img)
+            binding.devName.text = a.dev_name
+            binding.devUsername.text = a.dev_username
+            binding.devFollowers.text = "${a.dev_followers} followers"
+            binding.devFollowing.text = "${a.dev_following} following"
+            binding.devCompany.text = a.dev_comp
+            binding.devLocation.text = a.dev_country
+            binding.Repositories.text = "Repositories ${a.dev_repo}"
         }
     }
 

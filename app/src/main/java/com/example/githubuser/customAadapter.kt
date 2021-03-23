@@ -1,13 +1,17 @@
 package com.example.githubuser
 
+import android.app.Activity
+import android.renderscript.ScriptGroup
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 
 class customAadapter internal constructor() : BaseAdapter(){
+
     internal var rep = arrayListOf<trending_dev>()
     /*rep now carry data from dev*/
     override fun getCount(): Int =  rep.size
@@ -31,16 +35,17 @@ class customAadapter internal constructor() : BaseAdapter(){
         return itemView
     }
 
-    private inner class viewH(view : View){
+    inner class viewH(itemview : View){
         /*initializing data from the card element that we will show in listView
         * i only get this 3 data*/
-        private val name : TextView  = view.findViewById(R.id.dev_name)
-        private val username : TextView = view.findViewById(R.id.dev_username)
-        private val img : ImageView = view.findViewById(R.id.dev_pic)
+        private val name : TextView  = itemview.findViewById(R.id.dev_name)
+        private val username : TextView = itemview.findViewById(R.id.dev_username)
+        private val img : ImageView = itemview.findViewById(R.id.dev_pic)
         fun bind(repo : trending_dev){
             /*setting the data from each element
             the data was coming from trending class
            */
+
             name.text = repo.dev_name
             username.text = repo.dev_username
             img.setImageResource(repo.dev_img)
