@@ -120,6 +120,9 @@
     <string name="descrption">Descrption</string>
     <string name="kotlin">Kotlin</string>
     <string name="branch">Branch</string>
+    <string name="ob1_title">No more srceen someting</string>
+    <string name="lorem">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="skip"><u>Skip</u></string>
 </resources>
 
 

@@ -27,8 +27,6 @@
         android:inputType="textShortMessage" />
     <TextView
         android:id="@+id/texttren"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         style="@style/title"
         android:text="@string/trending_developers"
         android:textColor="@color/low_black"
@@ -41,11 +39,10 @@
         android:id="@+id/list_trending"
         android:layout_marginTop="8dp"
         android:layout_width="match_parent"
-        android:layout_height="580dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/texttren"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="24dp"
         tools:listitem="@layout/list_trending_dev"/>
 
 

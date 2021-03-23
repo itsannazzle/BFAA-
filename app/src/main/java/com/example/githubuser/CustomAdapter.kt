@@ -10,13 +10,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 
-class customAadapter internal constructor() : BaseAdapter(){
+class CustomAdapter internal constructor() : BaseAdapter(){
 
-    internal var rep = arrayListOf<trending_dev>()
+    internal var trendingDev = arrayListOf<TrendingDev>()
     /*rep now carry data from dev*/
-    override fun getCount(): Int =  rep.size
+    override fun getCount(): Int =  trendingDev.size
 
-    override fun getItem(position: Int): Any = rep[position]
+    override fun getItem(position: Int): Any = trendingDev[position]
 
     override fun getItemId(position: Int): Long = position.toLong()
     /*i dont understand what the use of this getItemMId*/
@@ -29,7 +29,7 @@ class customAadapter internal constructor() : BaseAdapter(){
         val viewholder = viewH(itemView as View)
         /*the class viewH has View const so the itemView act like View from converted view which is a View
         * confused? me too.*/
-        val i = getItem(position) as trending_dev
+        val i = getItem(position) as TrendingDev
         viewholder.bind(i)
         /*binding the data using bind funct from viewH class into the list_trending_dev layout*/
         return itemView
@@ -41,7 +41,7 @@ class customAadapter internal constructor() : BaseAdapter(){
         private val name : TextView  = itemview.findViewById(R.id.dev_name)
         private val username : TextView = itemview.findViewById(R.id.dev_username)
         private val img : ImageView = itemview.findViewById(R.id.dev_pic)
-        fun bind(repo : trending_dev){
+        fun bind(repo : TrendingDev){
             /*setting the data from each element
             the data was coming from trending class
            */

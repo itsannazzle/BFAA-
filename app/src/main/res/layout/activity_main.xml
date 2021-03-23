@@ -34,8 +34,6 @@
         app:layout_constraintHorizontal_bias="0"/>
     <TextView
         android:id="@+id/user_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         style="@style/title"
         android:text="@string/anna_karenina"
         android:textColor="@color/black"
@@ -47,8 +45,6 @@
         app:layout_constraintHorizontal_bias="0.08"/>
     <TextView
         android:id="@+id/user_followers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/uver_ava"
         app:layout_constraintTop_toBottomOf="@id/user_name"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,8 +56,6 @@
         app:layout_constraintVertical_bias="0.004"/>
     <TextView
         android:id="@+id/user_following"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/user_followers"
         app:layout_constraintTop_toBottomOf="@id/user_name"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,8 +67,6 @@
         app:layout_constraintVertical_bias="0.004"/>
     <TextView
         android:id="@+id/user_star"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:drawablePadding="4dp"
         android:textColor="@color/grey"
         app:layout_constraintStart_toEndOf="@id/user_following"
@@ -88,21 +80,17 @@
         app:drawableStartCompat="@drawable/ic_star" />
     <TextView
         android:id="@+id/sec_overview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/uver_ava"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        style="@style/title"
+        style="@style/sub_title"
         android:text="@string/repositories"
         android:textColor="@color/icon_grey"
         app:layout_constraintVertical_bias="0.024"
         app:layout_constraintHorizontal_bias="0"/>
     <TextView
         android:id="@+id/more"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/sec_overview"
         app:layout_constraintTop_toBottomOf="@id/uver_ava"
         app:layout_constraintEnd_toEndOf="parent"

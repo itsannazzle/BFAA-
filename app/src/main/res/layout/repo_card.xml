@@ -17,8 +17,6 @@
         android:layout_height="match_parent">
         <TextView
             android:id="@+id/repo1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:drawablePadding="4dp"
             style="@style/sub_title"
             android:textColor="@color/git_blue"
@@ -26,8 +24,6 @@
             app:drawableStartCompat="@drawable/ic_bx_bx_book_bookmark" />
         <TextView
             android:id="@+id/repodesc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginStart="23dp"
             android:layout_below="@id/repo1"
             android:text="@string/descrption"
@@ -36,8 +32,6 @@
           />
         <TextView
             android:id="@+id/repo_lang"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
             android:drawablePadding="4dp"
             style="@style/body_copy"
@@ -47,8 +41,6 @@
             app:drawableStartCompat="@drawable/circle" />
         <TextView
             android:id="@+id/repo_stars"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_toEndOf="@id/repo_lang"
             android:layout_alignParentBottom="true"
@@ -59,8 +51,6 @@
             app:drawableStartCompat="@drawable/ic_star" />
         <TextView
             android:id="@+id/repo_branch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_toEndOf="@id/repo_stars"
             android:layout_marginStart="16dp"

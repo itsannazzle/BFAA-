@@ -5,28 +5,21 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.githubuser.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
     private lateinit var binding : ActivityMainBinding
-    private val gitData: ArrayList<repo> = arrayListOf()
+    private val gitData: ArrayList<Repo> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        gitData.addAll(object_data.user_repo)
-        binding.rvOverview.adapter = repo_adapter(gitData)
+        gitData.addAll(ObjectData.user_repo)
+        binding.rvOverview.adapter = RepoAdapter(gitData)
         binding.rvOverview.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-
-
         binding.bottomNav.setOnNavigationItemSelectedListener(this)
-
     }
-
-
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         /*to use fragment from activity we have to call supportmanager fragment*/
@@ -45,7 +38,6 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                             * and not closing the app*/
                             .commit()
                             /*to commit.... its like to execute*/
-
                 }
             }
             R.id.ic_dash -> {
@@ -54,6 +46,4 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         }
         return true
     }
-
-
 }

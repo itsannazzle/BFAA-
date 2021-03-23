@@ -5,7 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 /*This is the data class for repo that will be use in recyler view*/
-data class repo(
+data class Repo(
     var user_repo : String,
     var user_repo_des : String,
     var user_repo_lang : String ,
@@ -13,7 +13,7 @@ data class repo(
 
 @Parcelize
 /*This is the data class for trending dev that will be use in list view*/
-data class trending_dev(
+data class TrendingDev(
         var dev_name: String,
         var dev_username: String,
         var dev_img: Int,

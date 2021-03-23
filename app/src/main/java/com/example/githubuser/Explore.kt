@@ -11,35 +11,32 @@ import com.example.githubuser.databinding.FragmentExploreBinding
 
 class Explore : Fragment() {
     /*instaciate?*/
-    private lateinit var adap : customAadapter
+    private lateinit var customAdapter: CustomAdapter
     private lateinit var binding : FragmentExploreBinding
-    private val dev = arrayListOf<trending_dev>()
+    private val trendingDev = arrayListOf<TrendingDev>()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
-        // Inflate the layout for this fragment
+        // Binding
         binding = FragmentExploreBinding.inflate(inflater,container,false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         /*initialize?*/
+        customAdapter = CustomAdapter()
 
-
-        adap = customAadapter()
-
-        binding.listTrending.adapter = adap
+        binding.listTrending.adapter = customAdapter
         addItem()
         binding.listTrending.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
             val bund = Bundle()
-            val dd = developer_detail()
-            bund.putParcelable(developer_detail.ex,dev[position])
+            val dd = DeveloperDetailActivity()
+            bund.putParcelable(DeveloperDetailActivity.EXTRA_TRENDING,trendingDev[position])
             dd.arguments = bund
             val fragMan = fragmentManager
             /*to replace one fragment into the other one*/
             fragMan?.beginTransaction()?.apply {
-                replace(R.id.layout_cpntainer,dd,developer_detail::class.java.simpleName)
+                replace(R.id.layout_cpntainer,dd,DeveloperDetailActivity::class.java.simpleName)
                 addToBackStack(null)
                 commit()
             }
@@ -48,8 +45,9 @@ class Explore : Fragment() {
     }
 
 
+
     @SuppressLint("Recycle")
-    private fun addItem() : ArrayList<trending_dev> {
+    private fun addItem()  {
         val dname= resources.getStringArray(R.array.name)
         val dusername= resources.getStringArray(R.array.username)
         val dimg = resources.obtainTypedArray(R.array.avatar)
@@ -59,10 +57,9 @@ class Explore : Fragment() {
         val dfollowing = resources.getStringArray(R.array.following)
         val drepo = resources.getStringArray(R.array.repository)
 
-        val dev = arrayListOf<trending_dev>()
         /*basically, this addItem is used for adding the data for the trending_dev data class*/
         for (pos in dname.indices){
-            val devop = trending_dev(
+            val devop = TrendingDev(
                 dname[pos],
                 dusername[pos],
                 dimg.getResourceId(pos,-1),
@@ -74,12 +71,11 @@ class Explore : Fragment() {
                     drepo[pos]
 
             )
-            dev.add(devop)
+            trendingDev.add(devop)
         }
-        adap.rep = dev
+        customAdapter.trendingDev = trendingDev
         /*this is sending the data from trending_dev data class that has been added from
         function addItem using dev object into internal variable rep in custom adapter class
         */
-        return dev
     }
 }
