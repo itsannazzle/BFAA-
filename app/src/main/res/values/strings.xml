@@ -120,9 +120,12 @@
     <string name="descrption">Descrption</string>
     <string name="kotlin">Kotlin</string>
     <string name="branch">Branch</string>
-    <string name="ob1_title">No more srceen someting</string>
     <string name="lorem">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="skip"><u>Skip</u></string>
+    <string name="subtitle">Millions of developers and companies build, ship, and maintain their software on GitHub—the largest and most advanced development platform in the world.</string>
+    <string name="sign_up">Sign up</string>
+    <string name="sign_in">Sign in</string>
+    <string name="landing_title">Where the world build software</string>
+    <string name="content_desc_gitglobe">Globe picture</string>
 </resources>
 
 

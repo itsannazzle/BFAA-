@@ -33,9 +33,9 @@ class Explore : Fragment() {
             val dd = DeveloperDetailActivity()
             bund.putParcelable(DeveloperDetailActivity.EXTRA_TRENDING,trendingDev[position])
             dd.arguments = bund
-            val fragMan = fragmentManager
+            //val fragMan = fragmentManager
             /*to replace one fragment into the other one*/
-            fragMan?.beginTransaction()?.apply {
+            childFragmentManager.beginTransaction().apply {
                 replace(R.id.layout_cpntainer,dd,DeveloperDetailActivity::class.java.simpleName)
                 addToBackStack(null)
                 commit()

@@ -14,4 +14,5 @@
     <color name="green">#25B433</color>
     <color name="icon_grey">#888D95</color>
     <color name="low_black">#1E1F21</color>
+    <color name="transparent">#00FFFF00</color>
 </resources>

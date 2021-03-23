@@ -11,14 +11,21 @@
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action
-            android:id="@+id/action_splashScreen_to_viewPager"
-            app:destination="@id/viewPager"
-            app:popUpTo="@id/viewPager"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_splashScreen_to_landingScreen"
+            app:destination="@id/landingScreen" />
     </fragment>
     <fragment
-        android:id="@+id/viewPager"
-        android:name="com.example.githubuser.onboarding.ViewPager"
-        android:label="fragment_view_pager"
-        tools:layout="@layout/fragment_view_pager" />
+        android:id="@+id/landingScreen"
+        android:name="com.example.githubuser.LandingScreen"
+        android:label="fragment_landing_screen"
+        tools:layout="@layout/fragment_landing_screen" >
+        <action
+            android:id="@+id/action_landingScreen_to_signIn"
+            app:destination="@id/signIn" />
+    </fragment>
+    <fragment
+        android:id="@+id/signIn"
+        android:name="com.example.githubuser.SignIn"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" />
 </navigation>

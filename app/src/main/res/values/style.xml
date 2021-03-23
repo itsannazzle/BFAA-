@@ -13,7 +13,7 @@
         <item name="fontFamily">@font/poppins_light</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:letterSpacing">0.01</item>
         <item name="lineHeight">16dp</item>
     </style>
@@ -21,7 +21,46 @@
         <item name="fontFamily">@font/poppins_light</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">10sp</item>
+        <item name="lineSpacing">8dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="lineHeight">16dp</item>
+    </style>
+    <style name="primaryButton" parent="Theme.MaterialComponents">
+        <item name="android:layout_width">170dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="background">@color/green</item>
+        <item name="fontFamily">@string/subtitle</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="lineHeight">16dp</item>
+    </style>
+    <style name="secondaryButton" parent="Theme.MaterialComponents">
+        <item name="android:layout_width">170dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="background">@color/transparent</item>
+        <item name="fontFamily">@string/subtitle</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="lineHeight">16dp</item>
+        <item name="strokeColor">@color/white</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+    <style name="input_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:strokeColor">@color/grey</item>
+        <item name="color">@color/white</item>
+        <item name="android:textColorHint">@color/text_grey</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_light</item>
+        <item name="android:padding">4dp</item>
+        <item name="maxCharacterCount">25</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:letterSpacing">0.03</item>
         <item name="lineHeight">16dp</item>
     </style>
