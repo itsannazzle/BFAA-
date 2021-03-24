@@ -126,6 +126,10 @@
     <string name="sign_in">Sign in</string>
     <string name="landing_title">Where the world build software</string>
     <string name="content_desc_gitglobe">Globe picture</string>
+    <string name="enter_username">Enter username</string>
+    <string name="sign_in_to_github">Sign in to GitHub</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
 </resources>
 
 

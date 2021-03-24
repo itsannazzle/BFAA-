@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.githubuser.databinding.FragmentExploreBinding
 
 class Explore : Fragment() {
@@ -18,16 +20,16 @@ class Explore : Fragment() {
                               savedInstanceState: Bundle?): View {
         // Binding
         binding = FragmentExploreBinding.inflate(inflater,container,false)
+        customAdapter = CustomAdapter()
+        binding.listTrending.adapter = customAdapter
+        addItem()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         /*initialize?*/
-        customAdapter = CustomAdapter()
 
-        binding.listTrending.adapter = customAdapter
-        addItem()
         binding.listTrending.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
             val bund = Bundle()
             val dd = DeveloperDetailActivity()
@@ -36,7 +38,7 @@ class Explore : Fragment() {
             //val fragMan = fragmentManager
             /*to replace one fragment into the other one*/
             childFragmentManager.beginTransaction().apply {
-                replace(R.id.layout_cpntainer,dd,DeveloperDetailActivity::class.java.simpleName)
+                replace(R.id.fragment,dd,DeveloperDetailActivity::class.java.simpleName)
                 addToBackStack(null)
                 commit()
             }

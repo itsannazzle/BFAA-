@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dashboard">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_cpntainer"
+        android:layout_width="match_parent"
+        android:layout_height="780dp"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/uver_ava"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/aku"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/user_name"
+            style="@style/title"
+            android:text="@string/anna_karenina"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toEndOf="@+id/uver_ava"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.008" />
+
+        <TextView
+            android:id="@+id/user_followers"
+            style="@style/sub_title"
+            android:text="@string/followers"
+            android:textColor="@color/grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toEndOf="@id/uver_ava"
+            app:layout_constraintTop_toBottomOf="@id/user_name"
+            app:layout_constraintVertical_bias="0.004" />
+
+        <TextView
+            android:id="@+id/user_following"
+            style="@style/sub_title"
+            android:text="@string/following"
+            android:textColor="@color/grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toEndOf="@id/user_followers"
+            app:layout_constraintTop_toBottomOf="@id/user_name"
+            app:layout_constraintVertical_bias="0.004" />
+
+        <TextView
+            android:id="@+id/user_star"
+            style="@style/sub_title"
+            android:drawablePadding="4dp"
+            android:text="@string/stars"
+            android:textColor="@color/grey"
+            app:drawableStartCompat="@drawable/ic_star"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toEndOf="@id/user_following"
+            app:layout_constraintTop_toBottomOf="@id/user_name"
+            app:layout_constraintVertical_bias="0.004" />
+
+        <TextView
+            android:id="@+id/sec_overview"
+            style="@style/sub_title"
+            android:text="@string/repositories"
+            android:textColor="@color/icon_grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/uver_ava"
+            app:layout_constraintVertical_bias="0.024" />
+
+        <TextView
+            android:id="@+id/more"
+            style="@style/sub_title"
+            android:text="@string/see_more"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@id/sec_overview"
+            app:layout_constraintTop_toBottomOf="@id/uver_ava"
+            app:layout_constraintVertical_bias="0.024" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sec_overview"
+            app:layout_constraintVertical_bias="0.024"
+            tools:layout_editor_absoluteX="2dp"
+            tools:layout_editor_absoluteY="70dp"
+            tools:listitem="@layout/repo_card" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1"
+        app:menu="@menu/bottom_nav"></com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

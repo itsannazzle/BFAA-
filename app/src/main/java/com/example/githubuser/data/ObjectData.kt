@@ -1,4 +1,6 @@
-package com.example.githubuser
+package com.example.githubuser.data
+
+import com.example.githubuser.Repo
 
 object ObjectData {
     private val repo_title = arrayOf(

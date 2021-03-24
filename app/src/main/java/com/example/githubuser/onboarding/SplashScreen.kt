@@ -26,6 +26,7 @@ class SplashScreen : Fragment() {
         Handler(Looper.getMainLooper()).postDelayed({
             view?.let { Navigation.findNavController(it).navigate(R.id.action_splashScreen_to_landingScreen) }
         }, 3000)
+
         return binding.root
     }
     private fun onBoardingFinish() : Boolean{

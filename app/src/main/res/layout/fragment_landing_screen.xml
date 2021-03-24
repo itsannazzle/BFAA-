@@ -44,22 +44,25 @@
             android:contentDescription="@string/content_desc_gitglobe"
             android:scaleType="matrix"
             android:src="@drawable/gitglobe" />
-
+        <Button
+            android:id="@+id/outlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/green"
+            android:text="Outlined button"
+            style="?attr/materialButtonOutlinedStyle"
+            />
         <com.google.android.material.button.MaterialButton
-            style="@style/secondaryButton"
             android:id="@+id/btn_sign_in"
-            android:layout_width="170dp"
-            android:layout_height="50dp"
-            android:text="@string/sign_in"
-            android:background="@color/transparent"
+            style="@style/secondaryButton"
             android:layout_gravity="bottom"
-            android:layout_marginStart="16dp"/>
+            android:layout_marginStart="16dp"
+            android:text="@string/sign_in" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_sign_up"
             style="@style/primaryButton"
             android:layout_gravity="end|bottom"
-            android:backgroundTint="@color/green"
             android:text="@string/sign_up" />
 
     </FrameLayout>

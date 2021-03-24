@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph_home"
+    app:startDestination="@id/dashboard">
+
+    <fragment
+        android:id="@+id/explore2"
+        android:name="com.example.githubuser.Explore"
+        android:label="fragment_explore"
+        tools:layout="@layout/fragment_explore" />
+    <fragment
+        android:id="@+id/developerDetailActivity"
+        android:name="com.example.githubuser.DeveloperDetailActivity"
+        android:label="fragment_developer_detail"
+        tools:layout="@layout/fragment_developer_detail" />
+    <fragment
+        android:id="@+id/dashboard"
+        android:name="com.example.githubuser.Dashboard"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboard_to_explore2"
+            app:destination="@id/explore2" />
+        <argument
+            android:name="username"
+            app:argType="string"
+            android:defaultValue="user" />
+        <action
+            android:id="@+id/action_dashboard_to_developerDetailActivity"
+            app:destination="@id/developerDetailActivity" />
+    </fragment>
+</navigation>
