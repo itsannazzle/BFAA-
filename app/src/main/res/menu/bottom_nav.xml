@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/ic_dash"
+    <item android:id="@+id/dashboard"
         android:title="Dashboard"
         android:icon="@drawable/ic_dash"/>
-    <item android:id="@+id/ic_explore"
+
+    <item android:id="@+id/explore"
         android:title="Explore"
         android:icon="@drawable/ic_explore"/>
+
     <item android:id="@+id/ic_pullrreq"
         android:title="Pull req"
         android:icon="@drawable/ic_pullreq"/>
+
     <item android:id="@+id/ic_market"
         android:title="Market"
         android:icon="@drawable/ic_market"/>

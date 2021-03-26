@@ -37,20 +37,20 @@ class Explore : Fragment() {
             dd.arguments = bund
             //val fragMan = fragmentManager
             /*to replace one fragment into the other one*/
-            childFragmentManager.beginTransaction().apply {
-                replace(R.id.fragment,dd,DeveloperDetailActivity::class.java.simpleName)
+            /*childFragmentManager.beginTransaction().apply {
+                replace(R.id.fragmenthost2,dd,DeveloperDetailActivity::class.java.simpleName)
                 addToBackStack(null)
-                commit()
+                commit()*/
+            findNavController().navigate(R.id.action_dashboard2_to_explore)
             }
 
         }
-    }
 
 
 
-    @SuppressLint("Recycle")
-    private fun addItem()  {
-        val dname= resources.getStringArray(R.array.name)
+
+    private fun addItem(){
+        val dname = resources.getStringArray(R.array.name)
         val dusername= resources.getStringArray(R.array.username)
         val dimg = resources.obtainTypedArray(R.array.avatar)
         val dcomp = resources.getStringArray(R.array.company)

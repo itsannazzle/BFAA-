@@ -19,8 +19,7 @@ class SignIn : Fragment() {
 
         binding.btnSignIn.setOnClickListener {
             val username = binding.textField.editText?.text.toString()
-            var action = SignInDirections.actionSignInToNavgraphHome()
-            Navigation.findNavController(it).navigate(action)
+            Navigation.findNavController(it).navigate(R.id.action_signIn_to_dummy)
         }
         return binding.root
     }

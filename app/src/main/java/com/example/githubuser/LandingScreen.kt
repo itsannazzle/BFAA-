@@ -19,6 +19,9 @@ class LandingScreen : Fragment() {
         binding.btnSignIn.setOnClickListener { view ->
            Navigation.findNavController(view).navigate(R.id.action_landingScreen_to_signIn)
         }
+        binding.btnSignUp.setOnClickListener {
+
+        }
 
         return binding.root
     }

@@ -4,9 +4,9 @@
     <group android:checkableBehavior="single">
         <item android:title="Item1"
             android:icon="@drawable/ic_github_logo"
-            android:id="@+id/action_1"/>
+            android:id="@+id/explore"/>
         <item android:title="Item2"
             android:icon="@drawable/ic_baseline_location_on_24"
-            android:id="@+id/action_2"/>
+            android:id="@+id/developerdetail"/>
     </group>
 </menu>
